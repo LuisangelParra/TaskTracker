@@ -1,7 +1,9 @@
+# /TaskTracker/task.py
 from datetime import datetime
-from filemanager import Reader, Writer
+from TaskTracker.filemanager import Reader, Writer
 
 """ Class task module """
+
 
 class Task:
     def __init__(self, description):
@@ -10,9 +12,7 @@ class Task:
         self.status = 'todo'
         self.createdAt = datetime.now().strftime("Created on %B %d, %Y at %I:%M %p")
         self.updatedAt = None
-        CreateTask(self)
 
-    
     def __SetID(self):
         tasks = Reader()
         if (len(list(tasks)) == 0):
@@ -24,55 +24,64 @@ class Task:
 def CreateTask(task):
     tasks = Reader()
     tasks[task.id] = {
-        'description': task.description, 
-        'status':task.status,
-        'createdAt':task.createdAt,
-        'updatedAt':task.updatedAt
-        }
+        'description': task.description,
+        'status': task.status,
+        'createdAt': task.createdAt,
+        'updatedAt': task.updatedAt
+    }
     Writer(tasks)
+    __PrintTasks(tasks)
+
 
 def UpdateTask(id, description):
     tasks = Reader()
     tasks[str(id)] = {
-        'description': description, 
+        'description': description,
         'status': tasks[str(id)]['status'],
-        'createdAt':tasks[str(id)]['createdAt'],
-        'updatedAt':__UpdateDate()
-        }
+        'createdAt': tasks[str(id)]['createdAt'],
+        'updatedAt': __UpdateDate()
+    }
     Writer(tasks)
+    __PrintTasks(tasks)
+
 
 def DeleteTask(id):
     tasks = Reader()
     tasks.pop(str(id))
     Writer(tasks)
+    __PrintTasks(tasks)
+
 
 def SetStatus(id, status):
     tasks = Reader()
     tasks[str(id)] = {
-        'description': tasks[str(id)]['description'], 
+        'description': tasks[str(id)]['description'],
         'status': status,
-        'createdAt':tasks[str(id)]['createdAt'],
-        'updatedAt':__UpdateDate()
-        }
+        'createdAt': tasks[str(id)]['createdAt'],
+        'updatedAt': __UpdateDate()
+    }
     Writer(tasks)
+    __PrintTasks(tasks)
+
 
 def ListTasks(status):
     tasks = Reader()
     if (status == None):
-        return __PrintTask(tasks)
+        return __PrintTasks(tasks)
     tasksWithStatus = {}
     for id in tasks:
         if (tasks[id]['status'] == status):
             tasksWithStatus[id] = tasks[id]
-    
-    __PrintTask(tasksWithStatus)
+
+    __PrintTasks(tasksWithStatus)
+
 
 def __UpdateDate():
     updatedAt = datetime.now().strftime("Last update on %B %d, %Y at %I:%M %p")
     return updatedAt
 
 
-def __PrintTask(tasksDict):
+def __PrintTasks(tasksDict):
     print('Task Tracker - List')
     for id in tasksDict:
         print('')

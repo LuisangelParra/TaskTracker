@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
 from parser import StringParser
-from task import Task, UpdateTask, DeleteTask, SetStatus, ListTasks
+from task import Task, CreateTask, UpdateTask, DeleteTask, SetStatus, ListTasks
 
 """ Main module Task Tracker """
 
 def main():
     args = StringParser()
     if (args.cmd == 'add'):
-        NewTask = Task(args.description)
+        newTask = Task(args.description)
+        CreateTask(newTask)
         print(f'Adding task {args.description}.')
     elif(args.cmd == 'update'):
         UpdateTask(args.id, args.description)
