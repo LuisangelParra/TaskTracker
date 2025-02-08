@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-from parser import StringParser
-from task import Task, CreateTask, UpdateTask, DeleteTask, SetStatus, ListTasks
+from TaskTracker.parser import StringParser
+from TaskTracker.task import Task, CreateTask, UpdateTask, DeleteTask, SetStatus, ListTasks
 
 """ Main module Task Tracker """
 
@@ -29,6 +29,8 @@ def main():
         else:
             print(f'Listing all tasks')
         ListTasks(args.status)
+    else:
+        pass
 
 if __name__ == "__main__":
     main()

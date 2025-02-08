@@ -3,7 +3,8 @@ import argparse
 """" Argument parser module """
 
 
-CommandParser = argparse.ArgumentParser(prog='TaskTracker', description='Task tracker is a project used to track and manage your tasks.')
+CommandParser = argparse.ArgumentParser(prog='TaskTracker', description='Task tracker is a project used to track and manage your tasks.', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+CommandParser.set_defaults(cmd='')
 CommandSubparsers = CommandParser.add_subparsers()
 
 AddTaskParser = CommandSubparsers.add_parser('add')
@@ -35,4 +36,6 @@ ListTaskParser.add_argument('status', nargs='?',choices=['done', 'todo', 'in-pro
 
 def StringParser():
     args = CommandParser.parse_args()
+    if (args.cmd == ''):
+        CommandParser.print_help()
     return args
