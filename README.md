@@ -47,6 +47,11 @@ This test ensures that when a new task is created, it is correctly stored and re
 ## Usage 📦
 This aplication run from the command line, accept user actions and inputs as arguments, and perform the corresponding actions on the task list. The user can add, list, update, delete, mark a task as in progress, and mark a task as done.
 
+To run any command, use the following format:
+```
+task-cli <command> <arguments>
+```
+
 ### Commands 📋
 
 - **add**: Add a new task to the task list.
