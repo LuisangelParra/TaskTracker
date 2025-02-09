@@ -42,14 +42,12 @@ def UpdateTask(id, description):
         'updatedAt': __UpdateDate()
     }
     Writer(tasks)
-    __PrintTasks(tasks)
 
 
 def DeleteTask(id):
     tasks = Reader()
     tasks.pop(str(id))
     Writer(tasks)
-    __PrintTasks(tasks)
 
 
 def SetStatus(id, status):
@@ -61,7 +59,6 @@ def SetStatus(id, status):
         'updatedAt': __UpdateDate()
     }
     Writer(tasks)
-    __PrintTasks(tasks)
 
 
 def ListTasks(status):
@@ -72,7 +69,6 @@ def ListTasks(status):
     for id in tasks:
         if (tasks[id]['status'] == status):
             tasksWithStatus[id] = tasks[id]
-
     __PrintTasks(tasksWithStatus)
 
 
