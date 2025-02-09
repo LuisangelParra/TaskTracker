@@ -88,5 +88,5 @@ def __PrintTasks(tasksDict):
         print(f'Task ID: {id} Description: {tasksDict[id]['description']}')
         print(f'Status: {tasksDict[id]['status']}')
         print(f'Creation Date: {tasksDict[id]['createdAt']}')
-        print(f'Udated: {tasksDict[id]['createdAt']}')
+        print(f'Udated: {tasksDict[id]['updatedAt']}')
         print('')

@@ -17,6 +17,6 @@ def Reader(filename = f'{path}/tasks.json'):
 
 def Writer(tasks):
     with open(f'{path}/tasks.json', mode="w", encoding="utf-8") as write_file:
-        json.dump(tasks, write_file)
+        json.dump(tasks, write_file, indent=4, ensure_ascii=False)
     write_file.close
     
