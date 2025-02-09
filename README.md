@@ -1,9 +1,11 @@
 # TaskTracker
+Implementation of a task tracker using a command line interface (CLI) in Python.
+https://roadmap.sh/projects/task-tracker
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-Task tracker is a project used to track and manage your tasks. In this task, you will build a simple command line interface (CLI) to track what you need to do, what you have done, and what you are currently working on. This project will help you practice your programming skills, including working with the filesystem, handling user inputs, and building a simple CLI application.
+Task tracker is a project used to track and manage your tasks. Is a simple command line interface (CLI) to track what you need to do, what you have done, and what you are currently working on.
 
 ## Starting 🚀
 ### Instalation 🔧
