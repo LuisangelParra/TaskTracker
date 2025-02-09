@@ -70,7 +70,7 @@ task-cli <command> <arguments>
 
 ## Autors ✒️
 
-* **Luisangel Parra** - *Trabajo Inicial* - [Luisangelparra](https://github.com/Luisangelparra)
+* **Luisangel Parra** - *Developer* - [Luisangelparra](https://github.com/Luisangelparra)
 
 ## License 📄
 
